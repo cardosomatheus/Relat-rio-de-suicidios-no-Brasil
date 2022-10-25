@@ -1,0 +1,22 @@
+set ExpNulos         = IF($1='' OR $1 =' ' OR $1 = 'NA' OR $1 = 'Nenhuma' OR $1 = 0  OR $1 = 6,   $2, $1);
+
+set ExpCidsSuicidios = IF(LEFT(Upper($1),2) = 'X6' OR LEFT(Upper($1),2) = 'X7' OR LEFT(Upper($1),2) = 'X8',$1, null());
+
+
+
+
+//DIMENSÕES E MEDIDAS DO DASHBOARD
+set TotalSuicidios       = Count([%SUICÍDIOS]);
+set PorcentagemMasculina = Count({<SEXO={'Masculino'}>}SEXO)/Count(SEXO);
+set PorcentagemFeminina  = Count({<SEXO={'Feminino'}>}SEXO)/Count(SEXO);
+set Estados              = ESTADOS;
+set AnoSuicidio          = [ANO DO SUICÍDIO];
+set MunicipioUF          = MUNICIPIOS_UF;
+set sexo                 = SEXO;
+set SuicidiosMasculinos  = Count({<SEXO = {'Masculino'}>}[%SUICÍDIOS]);
+set SuicidiosFemininos   = Count({<SEXO = {'Feminino'}>}[%SUICÍDIOS]);
+set EstadoCivil          = "ESTADO CIVIL";
+set TabelaSuicidios      = "%SUICÍDIOS";
+set DataObito            = "DATA DO ÓBITO";
+set CidsCoalisado        = CIDS_COALISADO;
+set DescricaoCids        = DescricaoCids;

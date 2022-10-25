@@ -1,0 +1,13 @@
+﻿// TABELA UTILIZADA NO APPLYMAP(CIDS_COALISADO) APÓS O TRATAMENTO E UNIÃO DOS DOIS CAMPOS QUE CONTEM OS CIDS 
+// PARA CONTER A DESCRIÇÃO DOS SUICÍDIOS
+
+set vNomeTabela = 'CIDS';
+
+$(vNomeTabela):
+Mapping
+LOAD
+    CID10,
+    Descrição                                               
+FROM [$(vPastaExtracao)$(vNomeTabela).QVD](qvd);
+
+

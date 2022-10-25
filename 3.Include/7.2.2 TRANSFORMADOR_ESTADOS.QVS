@@ -1,0 +1,56 @@
+﻿Nome_Estado:
+Mapping LOAD * Inline [
+estado, NomeEstado
+AC	  , Acre
+AL	  , Alagoas 
+AP	  , Amapá 
+AM	  ,	Amazonas 
+BA	  , Bahia 	
+CE	  , Ceará
+ES	  , Espírito Santo
+DF    , Distrito Federal
+GO	  , Goiás
+MA	  , Maranhão 
+MT	  , Mato Grosso
+MS	  , Mato Grosso do Sul
+MG	  , Minas Gerais
+PA	  , Pará	
+PB	  , Paraíba
+PR 	  , Paraná 		
+PE	  , Pernambuco 	 	
+PI	  , Piauí 	 	
+RJ	  , Rio de Janeiro 	 
+RN	  , Rio Grande do Norte 	
+RS	  , Rio Grande do Sul 		
+RO	  , Rondônia 	 	
+RR	  , Roraima 		
+SC	  , Santa Catarina 		
+SP	  , São Paulo 		
+SE	  , Sergipe 	 	
+TO	  , Tocantins 	
+];	  
+
+
+Map_Municipios:
+Mapping LOAD * Inline [
+
+Municipios_Invalidos, Retorno
+110000              , NDA
+150000              , NDA
+170000              , NDA
+210000              , NDA
+220000              , NDA
+250000              , NDA
+260000              , NDA
+280000              , NDA
+290000              , NDA
+310000              , NDA
+320000              , NDA
+330000              , NDA
+350000              , NDA
+410000              , NDA
+420000              , NDA
+500000              , NDA
+510000              , NDA
+520000              , NDA
+];

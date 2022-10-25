@@ -1,0 +1,7 @@
+﻿
+$(MUST_INCLUDE='lib://suicidio/3.Include/MAIN.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/VARIAVEIS.QVS');
+
+//Script
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.1.2 EXTRATOR_SUICIDIO.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.1.3 EXTRATOR_CID10.QVS');

@@ -1,0 +1,5 @@
+﻿			// PASTAS DE ORIGEM E MOVIMENTAÇÃO
+set vPastaOrigem 		   	  = 'lib://suicidio/5.Import/';
+set vPastaExtracao 		   	  = 'lib://suicidio/2.QVD/1.Extract/';
+set vPastaTransformacao    	  = 'lib://suicidio/2.QVD/2.Transform/';
+set vPastaLoad			   	  = 'lib://suicidio/2.QVD/3.Load/';

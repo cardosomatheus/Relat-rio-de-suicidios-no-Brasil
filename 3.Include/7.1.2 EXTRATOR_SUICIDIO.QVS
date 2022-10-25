@@ -1,0 +1,31 @@
+﻿set vNomeInical = 'suicidios_2010_a_2019.csv';
+set vNomeTabela = 'Suicidios';
+
+
+$(vNomeTabela):
+LOAD
+    ID_SUICIDIO,
+    estado,
+    ano,
+    mes,
+    DTOBITO,
+    DTNASC,
+    SEXO,
+    RACACOR,
+    ASSISTMED,
+    ESCMAE,
+    ESTCIV,
+    ESC,
+    OCUP,
+    CODMUNRES,
+    CAUSABAS,
+    CAUSABAS_O,
+    LOCOCOR,
+    CIRURGIA  
+FROM [$(vPastaOrigem)$(vNomeInical)]
+(txt, utf8, embedded labels, delimiter is ';', msq);
+
+Store $(vNomeTabela) into [$(vPastaExtracao)$(vNomeTabela).QVD](QVD);
+Drop table $(vNomeTabela);
+
+

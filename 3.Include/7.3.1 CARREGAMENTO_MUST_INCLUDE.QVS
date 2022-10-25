@@ -1,0 +1,8 @@
+$(MUST_INCLUDE='lib://suicidio/3.Include/MAIN.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/VARIAVEIS.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/EXPRESSOES.QVS');
+
+
+//Script
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.3.2 CARREGAMENTO_SUICIDIOS.QVS');
+

@@ -1,0 +1,13 @@
+﻿set vNomeInical = 'CIDS.xlsx';
+set vNomeTabela = 'CIDS';
+
+
+$(vNomeTabela):
+LOAD
+    CID10,
+    Descrição
+FROM [$(vPastaOrigem)$(vNomeInical)]
+(ooxml, embedded labels, table is CIDS);
+
+Store $(vNomeTabela) into [$(vPastaExtracao)$(vNomeTabela).QVD](QVD);
+Drop table $(vNomeTabela);

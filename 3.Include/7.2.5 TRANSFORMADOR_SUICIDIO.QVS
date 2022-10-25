@@ -1,0 +1,42 @@
+﻿set vNomeTabela = 'Suicidios';
+
+$(vNomeTabela):
+LOAD
+    *,
+    IF(MUNICIPIOS <> NULL(),MUNICIPIOS&' - '&UF, NULL())                    AS MUNICIPIOS_UF,
+    APPLYMAP('Map_dtnascimento',DATA_NASCIMENTO)                            AS DTNASCIMENTO,
+    APPLYMAP('CIDS',CIDS_COALISADO)                                         AS "DESCRIÇÃO DOS CIDS";
+LOAD 
+    ID_SUICIDIO                                                             AS "%SUICÍDIOS",
+    estado                                                                  AS UF,
+    APPLYMAP('Nome_Estado', estado)                                         AS ESTADOS,
+    $(ExpNulos(SEXO ,NULL()))                                               AS SEXO,
+    Year(DTOBITO)                                                           AS "ANO DO SUICÍDIO",
+    Month(DTOBITO)                                                          AS "MÊS DO SUICÍDIO",
+    IF(Applymap('Map_Municipios',CODMUNRES)='NDA',NULL(),CODMUNRES)         AS MUNICIPIOS,
+    Date(DTOBITO,'DD/MM/YYYY')                                              AS "DATA DO ÓBITO",
+    Date($(ExpNulos(DTNASC,NULL())))                                        AS DATA_NASCIMENTO,
+    year(DTNASC)                                                            AS anonasc,
+    $(ExpNulos(RACACOR,null()))                                             AS "COR OU RAÇA",
+    $(ExpNulos(ASSISTMED ,'NDA'))                                           AS "ASSISTÊNCIA MÉDICA",
+    $(ExpNulos(ESTCIV ,null()))                                             AS "ESTADO CIVIL",
+    $(ExpNulos(ESC ,'NDA'))                                                 AS "ESCOLARIDADE",
+    $(ExpNulos(OCUP,'NDA'))                                                 AS "OCUPAÇÃO",
+    $(ExpNulos(LOCOCOR ,'Outros'))                                          AS "LOCALIDADE DA OCORRÊNCIA",
+    $(ExpNulos(CIRURGIA ,'Sem informação'))                                 AS "REALIZAÇÃO DE CIRURGIA",
+    $(ExpCidsSuicidios(CAUSABAS))                                           AS CIDS_PRIMARIOS,
+    $(ExpCidsSuicidios(CAUSABAS_O))                                         AS CIDS_SECUDARIOS,
+    COALESCE($(ExpCidsSuicidios(CAUSABAS)),$(ExpCidsSuicidios(CAUSABAS_O))) AS CIDS_COALISADO
+    //ESCMAE,
+    //mes
+    //ano
+FROM [$(vPastaExtracao)$(vNomeTabela).QVD]
+(qvd);
+
+Store $(vNomeTabela) into [$(vPastaTransformacao)$(vNomeTabela).QVD](QVD);
+Drop table $(vNomeTabela);
+
+
+
+
+

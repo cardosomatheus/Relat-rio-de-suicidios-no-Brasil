@@ -1,0 +1,12 @@
+﻿$(MUST_INCLUDE='lib://suicidio/3.Include/MAIN.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/VARIAVEIS.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/EXPRESSOES.QVS');
+
+
+//Script
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.2.2 TRANSFORMADOR_ESTADOS.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.2.3 TRANFORMADOR_CIDS.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.2.4 TRANSFORMADOR_DTNASCIMENTO.QVS');
+$(MUST_INCLUDE='lib://suicidio/3.Include/7.2.5 TRANSFORMADOR_SUICIDIO.QVS');
+
+

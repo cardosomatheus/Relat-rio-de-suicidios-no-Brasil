@@ -1,0 +1,11 @@
+set vNomeTabela = 'suicidios';
+
+$(vNomeTabela):
+
+LOAD 
+    *
+FROM [$(vPastaTransformacao)$(vNomeTabela).QVD](qvd);
+
+DROP Field CIDS_PRIMARIOS,CIDS_SECUDARIOS;
+
+Store $(vNomeTabela) into [$(vPastaLoad)$(vNomeTabela).QVD](QVD);
